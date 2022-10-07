@@ -11,7 +11,7 @@ mockRouter.get('/', (req, res)=>{
     const prodsQuantity = 5;
     const prods = [];
 
-    for (let i = 0; i <= prodsQuantity; i++ ) {
+    for (let i = 1; i <= prodsQuantity; i++ ) {
         const product = {
             id: i,
             title: faker.commerce.product(),

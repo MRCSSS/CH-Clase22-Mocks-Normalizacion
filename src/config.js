@@ -17,5 +17,6 @@ export default {
       },
     mongodb: {
         cnxStr: 'mongodb+srv://admin:adminpw@cluster0.vfrm3.mongodb.net/ecommerce?retryWrites=true&w=majority'
-    }
+    },
+    
 }

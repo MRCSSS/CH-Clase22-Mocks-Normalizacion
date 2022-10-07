@@ -1,0 +1,15 @@
+[
+  { 
+    "author": {
+      "email": "test1@mail.com",
+      "name": "Marcos",
+      "lastName": "Solis",
+      "age": 27,
+      "nickname": "soyMSS",
+      "avatar": "https://www.w3schools.com/howto/img_avatar.png"
+    },
+    "timestamp": "05/09/2022 02:48:55",
+    "message": "Hola"
+  }
+]
+

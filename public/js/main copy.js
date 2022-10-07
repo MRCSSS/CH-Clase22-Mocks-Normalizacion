@@ -8,89 +8,71 @@ const socket = io();
 //     })
 // })
 
-socket.on('serv-msgs', dataN => {
-    let dataNsize = JSON.stringify(dataN).length;
-    let dataD = normalizr.denormalize(dataN.result, msgsSchema, dataN.entities);
-    let dataDsize = JSON.stringify(dataD).length;
-    let compression = parseInt((dataDsize * 100) / dataNsize);
-    console.log(dataD)
-    renderMessages(dataD, compression).then(html => {
-        document.getElementById('messages_formlist').innerHTML = html;
-    })
+socket.on('serv-msgs', data => {
+    renderMessages(data);
 })
 
 /* --------------------------- HANDLEBARS ---------------------------*/
-async function renderMessages (data, compression) {
-    return fetch('templates/messagesCenter.hbs')
-        .then(resp => resp.text())
-        .then(temp => {
-            const template = Handlebars.compile(temp);
-            const html = template( {data, compression} );
-
-            return html
-        })
-}
-
     /* ------------------------- Layouts ------------------------ */
 // const prodsTable = `{{> prod_table}}`;
 
-// const messagesView = `{{> chat}}`;
+const messagesView = `{{> chat}}`;
 
     /* ------------------------ Partials ----------------------- */
 // Handlebars.registerPartial( "prod_table", // Tabla para mostrar productos
 //     `<h2 style="color:crimson;">Lista de Productos</h2>
 //     <div id="prodTableContent"></div>`
 // );
-// Handlebars.registerPartial( "chat", // Chat
-//     `<h2 style="color:blue;">Centro de Mensajes</h2>
-//     <form >
-//         <div class="form-group">
-//             <label for="user"><b>Usuario:</b></label>
-//             <input id="user" class="form-control" type="text" name="user" placeholder="José">
-//             <small id="userComment" class="form-text text-muted">Usuario que enviará el mensaje.</small>
-//         </div>
-//         <div class="form-group">
-//             <label for="messageContent"><b>Mensaje:</b></label>
-//             <textarea id="messageContent" class="form-control" name="messageContent" rows="1"></textarea>
-//         </div>
-//         <button class="btn btn-primary mt-3 mb-3" onclick="sendMessage()">Enviar</button>
-//     </form>
-//     <hr>
-//     <div id="messagesRecord">
-//         <!-- Se renderizarán los mensajes ya enviados -->
-//         {{#each messages}}
-//             <span>
-//                 <b style="color:blue;">{{this.author}}</b>
-//                 <small style="color:crimson;"> [{{this.date}}] </small> <b style="color:blue;">:</b>
-//                 <i style="color:green;"> {{this.message}} </i>
-//             </span>
-//             <br>
-//         {{/each}}
-//     </div>    
-//     `
-// );
+Handlebars.registerPartial( "chat", // Chat
+    `<h2 style="color:blue;">Centro de Mensajes</h2>
+    <form >
+        <div class="form-group">
+            <label for="user"><b>Usuario:</b></label>
+            <input id="user" class="form-control" type="text" name="user" placeholder="José">
+            <small id="userComment" class="form-text text-muted">Usuario que enviará el mensaje.</small>
+        </div>
+        <div class="form-group">
+            <label for="messageContent"><b>Mensaje:</b></label>
+            <textarea id="messageContent" class="form-control" name="messageContent" rows="1"></textarea>
+        </div>
+        <button class="btn btn-primary mt-3 mb-3" onclick="sendMessage()">Enviar</button>
+    </form>
+    <hr>
+    <div id="messagesRecord">
+        <!-- Se renderizarán los mensajes ya enviados -->
+        {{#each messages}}
+            <span>
+                <b style="color:blue;">{{this.author}}</b>
+                <small style="color:crimson;"> [{{this.date}}] </small> <b style="color:blue;">:</b>
+                <i style="color:green;"> {{this.message}} </i>
+            </span>
+            <br>
+        {{/each}}
+    </div>    
+    `
+);
 
     /* ------------------------ Renders ------------------------ */
 // const productsHtml = Handlebars.compile(prodsTable);
 // const table = document.getElementById('#prods_table')
 // table.innerHTML = productsHtml();
 
-// const messagesHtml = Handlebars.compile(messagesView);
-// document.getElementById('messages_formlist').innerHTML = messagesHtml();
+const messagesHtml = Handlebars.compile(messagesView);
+document.getElementById('messages_formlist').innerHTML = messagesHtml();
 
-// const renderMessages = (messages) => {
-//     const allMessages = messages.map((msg) => {
-//         return `
-//         <span>
-//             <b style="color:blue;">${msg.author}</b>
-//             <small style="color:crimson;"> [${msg.date}] </small> <b style="color:blue;">:</b>
-//             <i style="color:green;"> ${msg.message} </i>
-//         </span>
-//         ` 
-//     }).join('<br>');
+const renderMessages = (messages) => {
+    const allMessages = messages.map((msg) => {
+        return `
+        <span>
+            <b style="color:blue;">${msg.author}</b>
+            <small style="color:crimson;"> [${msg.date}] </small> <b style="color:blue;">:</b>
+            <i style="color:green;"> ${msg.message} </i>
+        </span>
+        ` 
+    }).join('<br>');
 
-//     document.getElementById('messagesRecord').innerHTML = allMessages;
-// }
+    document.getElementById('messagesRecord').innerHTML = allMessages;
+}
     
 // const renderProducts = (products) => {
 //     console.log('en render product')
@@ -136,6 +118,9 @@ const msgsSchema = new normalizr.schema.Entity('posts', { messages: [messageSche
 /* --------------------------- FUNCIONES ----------------------------*/
 function sendMessage() {
     const nowDate = new Date();
+    
+    const inputUser = document.querySelector('#user');
+    const inputMessage = document.querySelector('#messageContent');
     const inputDate = 
     `${nowDate.getDate() > 9 ? nowDate.getDate() : `0${nowDate.getDate()}`}/`+
     `${nowDate.getMonth() > 9 ? nowDate.getMonth() : `0${nowDate.getMonth()}`}/${nowDate.getFullYear()} `+
@@ -144,17 +129,10 @@ function sendMessage() {
     `${nowDate.getSeconds() > 9 ? nowDate.getSeconds() : `0${nowDate.getSeconds()}`}`;
 
     const msg = {
-        author: {
-            email: document.getElementById('').value,
-            name: document.getElementById('').value,
-            lastName: document.getElementById('').value,
-            age: document.getElementById('').value,
-            nickname: document.getElementById('').value,
-            avatar: document.getElementById('').value
-        },
-        timestamp: inputDate,
+        author: inputUser.value,
+        date: inputDate,
         message: inputMessage.value
     }
 
-    socket.emit('client-msgs', msg)
+    socket.emit('from-client-msg', msg)
 }
