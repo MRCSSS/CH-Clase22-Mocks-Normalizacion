@@ -22,6 +22,7 @@ mockRouter.get('/', (req, res)=>{
         prods.push(product);
     }
 
+    
     res.status(200).json(prods);
 });
 

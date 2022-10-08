@@ -2,18 +2,12 @@
 const socket = io();
 
 /* ---------------------------- WEBSOCKET ---------------------------*/
-// socket.on('serv-prods', data => {
-//     renderProducts(data).then(html => {
-//         document.getElementById('prodTableContent').innerHTML = html;
-//     })
-// })
-
 socket.on('serv-msgs', dataN => {
     let dataNsize = JSON.stringify(dataN).length;
     let dataD = normalizr.denormalize(dataN.result, msgsSchema, dataN.entities);
     let dataDsize = JSON.stringify(dataD).length;
     let compression = parseInt((dataDsize * 100) / dataNsize);
-    console.log(dataD)
+
     renderMessages(dataD, compression).then(html => {
         document.getElementById('messages_formlist').innerHTML = html;
     })
@@ -30,103 +24,6 @@ async function renderMessages (data, compression) {
             return html
         })
 }
-
-    /* ------------------------- Layouts ------------------------ */
-// const prodsTable = `{{> prod_table}}`;
-
-// const messagesView = `{{> chat}}`;
-
-    /* ------------------------ Partials ----------------------- */
-// Handlebars.registerPartial( "prod_table", // Tabla para mostrar productos
-//     `<h2 style="color:crimson;">Lista de Productos</h2>
-//     <div id="prodTableContent"></div>`
-// );
-// Handlebars.registerPartial( "chat", // Chat
-//     `<h2 style="color:blue;">Centro de Mensajes</h2>
-//     <form >
-//         <div class="form-group">
-//             <label for="user"><b>Usuario:</b></label>
-//             <input id="user" class="form-control" type="text" name="user" placeholder="José">
-//             <small id="userComment" class="form-text text-muted">Usuario que enviará el mensaje.</small>
-//         </div>
-//         <div class="form-group">
-//             <label for="messageContent"><b>Mensaje:</b></label>
-//             <textarea id="messageContent" class="form-control" name="messageContent" rows="1"></textarea>
-//         </div>
-//         <button class="btn btn-primary mt-3 mb-3" onclick="sendMessage()">Enviar</button>
-//     </form>
-//     <hr>
-//     <div id="messagesRecord">
-//         <!-- Se renderizarán los mensajes ya enviados -->
-//         {{#each messages}}
-//             <span>
-//                 <b style="color:blue;">{{this.author}}</b>
-//                 <small style="color:crimson;"> [{{this.date}}] </small> <b style="color:blue;">:</b>
-//                 <i style="color:green;"> {{this.message}} </i>
-//             </span>
-//             <br>
-//         {{/each}}
-//     </div>    
-//     `
-// );
-
-    /* ------------------------ Renders ------------------------ */
-// const productsHtml = Handlebars.compile(prodsTable);
-// const table = document.getElementById('#prods_table')
-// table.innerHTML = productsHtml();
-
-// const messagesHtml = Handlebars.compile(messagesView);
-// document.getElementById('messages_formlist').innerHTML = messagesHtml();
-
-// const renderMessages = (messages) => {
-//     const allMessages = messages.map((msg) => {
-//         return `
-//         <span>
-//             <b style="color:blue;">${msg.author}</b>
-//             <small style="color:crimson;"> [${msg.date}] </small> <b style="color:blue;">:</b>
-//             <i style="color:green;"> ${msg.message} </i>
-//         </span>
-//         ` 
-//     }).join('<br>');
-
-//     document.getElementById('messagesRecord').innerHTML = allMessages;
-// }
-    
-// const renderProducts = (products) => {
-//     console.log('en render product')
-//     let allProducts = '';
-//     if ( products.length > 0 ) {
-//         const tableContent = products.map((prod) => {
-//             return `
-//                 <tr> 
-//                     <td>${prod.title}</td>
-//                     <td style="text-align: center;">$ ${prod.price}</td>
-//                     <td style="text-align: center;">
-//                         <img width="30" src="${prod.thumbnail}" alt="">
-//                     </td>
-//                 </tr>
-//             `
-//         }).join("\n");
-//         allProducts = `
-//             <div class="table-responsive">
-//                 <table class="table table-dark">
-//                     <tr> 
-//                         <th>Nombre</th> 
-//                         <th style="text-align: center;">Precio</th> 
-//                         <th style="text-align: center;">Imagen</th> 
-//                     </tr>
-//                     <!-- filas -->
-//                     ${tableContent}
-//                     <!-- Fin filas -->
-//                 </table>
-//             </div>
-//         `;
-//     } else {
-//         allProducts = '<h3 class="alert alert-warning">No se encontraron productos</h3>';
-//     }
-
-//     document.querySelector('#prodTableContent').innerHTML = allProducts;
-// }
 
 /* ------------------ DESNORMALIZACION DE MENSAJES ------------------*/
 const authorSchema = new normalizr.schema.Entity('author', {}, { idAttribute: 'email' });
@@ -145,16 +42,17 @@ function sendMessage() {
 
     const msg = {
         author: {
-            email: document.getElementById('').value,
-            name: document.getElementById('').value,
-            lastName: document.getElementById('').value,
-            age: document.getElementById('').value,
-            nickname: document.getElementById('').value,
-            avatar: document.getElementById('').value
+            email: document.getElementById('email').value,
+            name: document.getElementById('name').value,
+            lastName: document.getElementById('lName').value,
+            age: document.getElementById('age').value,
+            nickname: document.getElementById('nickn').value,
+            avatar: document.getElementById('avatar').value
         },
         timestamp: inputDate,
-        message: inputMessage.value
+        message: document.getElementById('messageContent').value
     }
 
-    socket.emit('client-msgs', msg)
+    console.log("msg",msg)
+    // socket.emit('client-msg', msg)
 }

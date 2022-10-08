@@ -10,6 +10,17 @@
     },
     "timestamp": "05/09/2022 02:48:55",
     "message": "Hola"
+  },
+  { 
+    "author": {
+      "email": "test2@mail.com",
+      "name": "Manu",
+      "lastName": "Perez",
+      "age": 23,
+      "nickname": "MaPe23",
+      "avatar": "https://www.w3schools.com/w3images/avatar2.png"
+    },
+    "timestamp": "05/09/2022 02:50:55",
+    "message": "Cómo te va?"
   }
 ]
-

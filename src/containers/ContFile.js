@@ -11,8 +11,8 @@ class ContFile {
 
     async getAll() {
         try {
-            const prods = await fs.readFile(this.path, 'utf8');
-            return JSON.parse(prods);
+            const objs = await fs.readFile(this.path, 'utf8');
+            return JSON.parse(objs);
         } catch (error) {
             console.log('ContFile.js at getAll() ', error);
             return [];
@@ -26,10 +26,8 @@ class ContFile {
         return foundObj != '' ? foundObj : {'Error': `Could not find the product "id: ${id}"`}
     }
 
-    async save(prod) {
-        console.log(prod)
-
-        const prods = await this.getAll();
+    async save(obj) {
+        const objs = await this.getAll();
         let newID;
 
         if (prods.length === 0) {

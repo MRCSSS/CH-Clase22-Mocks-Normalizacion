@@ -44,19 +44,13 @@ io.on('connection', async (socket) => {
     console.log(`Client conected: ${socket.id}`);
 
     socket.emit('serv-msgs', await getAllNormalized());
-    // socket.emit('serv-prods', await prodsDao.getAll());
+    socket.emit('serv-prods', []);
 
-    // console.log('prodsDao.getAll()', await prodsDao.getAll())
-    // console.log('getAllNormalized()', getAllNormalized())
-
-    socket.on('client-msgs', async (msg) => {
+    socket.on('client-msg', async (msg) => {
+        console.log('msg',msg);
         await msgsDao.save(msg);
-        io.sockets.emit('serv-msgs', getAllNormalized());
+        io.sockets.emit('serv-msgs', await getAllNormalized());
     })
-    // socket.on('client-prods', async (prod) => {
-    //     await prodsDao.save(prod);
-    //     io.sockets.emit('serv-prods', await prodsDao.getAll());
-    // })
 })    
 
 /* ---------------------- MODULOS EXPORTADOS ------------------------ */

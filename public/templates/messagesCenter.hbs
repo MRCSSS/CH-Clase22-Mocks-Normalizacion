@@ -33,27 +33,25 @@
         </select>
         <small id="userComment" class="form-text text-muted">Género/Color de fondo</small>
     </div>
-</form>
-<hr>
-<div id="messagesRecord">
-    <!-- Se renderizarán los mensajes ya enviados -->
-    {{#each data.msgs}}
-        <span>
-            <img src={{this.author.avatar}} style="height: 45px;border-radius: 50%;" />
-            <b style="color:blue;">{{this.author.email}}</b>
-            <small style="color:crimson;"> [{{this.timestamp}}] </small> <b style="color:blue;">:</b>
-            <i style="color:green;"> {{this.message}} </i>
-        </span>
-        <br>
-    {{/each}}
-    {{#if data.msgs}}
     <hr>
-    {{/if}}
-</div>
-<form>
+    <div id="messagesRecord">
+        <!-- Se renderizarán los mensajes ya enviados -->
+        {{#each data.msgs}}
+            <span>
+                <img src={{this.author.avatar}} style="height: 45px;border-radius: 55%;padding-bottom: 5px;" />
+                <b style="color:blue;">{{this.author.email}}</b>
+                <small style="color:crimson;"> [{{this.timestamp}}] </small> <b style="color:blue;">:</b>
+                <i style="color:green;"> {{this.message}} </i>
+            </span>
+            <br>
+        {{/each}}
+        {{#if data.msgs}}
+        <hr>
+        {{/if}}
+    </div>
     <div class="form-group">
         <label for="messageContent"><b>Mensaje:</b></label>
         <textarea id="messageContent" class="form-control" name="messageContent" rows="3" style="resize:none;" placeholder="Escribe tu mensaje"></textarea>
     </div>
-    <button class="btn btn-primary mt-3 mb-3" onclick="sendMessage()">Enviar</button>
+    <button class="btn btn-primary mt-3 mb-3" onclick=sendMessage() >Enviar</button>
 </form>
