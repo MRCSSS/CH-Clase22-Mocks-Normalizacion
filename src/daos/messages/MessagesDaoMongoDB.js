@@ -1,19 +1,16 @@
+/* ---------------------- MODULOS IMPORTADOS ------------------------ */
 import ContMongoDB from '../../containers/ContMongoDB.js';
 
 /* ------------------------ CLASE CONTENEDOR ------------------------ */
-class CartsDaoMongoDB extends ContMongoDB {
+class MessagesDaoMongoDB extends ContMongoDB {
     constructor() {
-        super('carts', {
+        super('msgs', {
+            author: { type: [], required: true },
             timestamp: { type: String, required: true },
-            productos: { type: [], required: true },
-            id: { type: String, required: true }
+            message: { type: String, required: true }
         });
-    }
-
-    async save( cart= { products: [] }) {
-        return super.save(cart);
     }
 }
 
 /* ---------------------- MODULOS EXPORTADOS ------------------------ */
-export default CartsDaoMongoDB;
+export default MessagesDaoMongoDB;

@@ -1,15 +1,12 @@
+/* ---------------------- MODULOS IMPORTADOS ------------------------ */
 import ContMemory from '../../containers/ContMemory.js';
 
 /* ------------------------ CLASE CONTENEDOR ------------------------ */
-class CartsDaoMemory extends ContMemory {
+class MessagesDaoMemory extends ContMemory {
     constructor() {
-        super('carts', {carts: {}});
-    }
-
-    async save( cart= { products: [] }) {
-        return super.save(cart);
+        super('msgs');
     }
 }
 
 /* ---------------------- MODULOS EXPORTADOS ------------------------ */
-export default CartsDaoMemory;
+export default MessagesDaoMemory;

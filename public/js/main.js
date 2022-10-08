@@ -53,6 +53,5 @@ function sendMessage() {
         message: document.getElementById('messageContent').value
     }
 
-    console.log("msg",msg)
-    // socket.emit('client-msg', msg)
+    socket.emit('client-msg', msg)
 }

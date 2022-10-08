@@ -5,7 +5,7 @@ import morgan from 'morgan';
 import mockRouter from './routes/test.routes.js';
 import { Server } from 'socket.io';
 import { normalize, schema } from 'normalizr';
-import { prodsDao, msgsDao } from './daos/index.js';
+import { msgsDao } from './daos/index.js';
 
 /* ---------------------- INSTANCIA DE SERVER ----------------------- */
 const app = express();
@@ -47,7 +47,6 @@ io.on('connection', async (socket) => {
     socket.emit('serv-prods', []);
 
     socket.on('client-msg', async (msg) => {
-        console.log('msg',msg);
         await msgsDao.save(msg);
         io.sockets.emit('serv-msgs', await getAllNormalized());
     })

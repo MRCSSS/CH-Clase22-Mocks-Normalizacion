@@ -5,18 +5,18 @@ export default {
     },
     firebase: {
         "type": "service_account",
-        "project_id": "ecommerce-789cf",
-        "private_key_id": "d7d490f97e7d70b3ed49207b3a969c6da0d357b6",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDM/HEavFfEHMVl\nRalTdQaViB1abnd94BIlx1QVYA7cs2UZygmOPI4cXfKAkSDNcKvDCl41kpNyvYfT\n1DG8mtUy9qrsprcyjBb6dkOLl9qTkGpKKlmT4F4DjrC5OVho/yYqrH1vlwou2hWu\npVsZ6axC1TrP8FHoCGxdKR6gWfWerTECMM3JdpzooQAmNjAjW9hDBpl8p7aI+YSe\nj0l+PEko4o9j5y6icgZBzbZN9MAj5xvJfnyH9OyQSk1RYb0YovMl4kOsMwn/VNgq\n30boJL5JRDviOzsD5SMIG4mBAC1lxBoVdgVpXJOns5LKxROXIuqeBxs1TjFKtAFu\nQY3kseNFAgMBAAECggEAFO2VEpi2ETSqxpslHXsuL+gUrx3mHzjYQXknUYNcIRZD\ntS1WamouTCEfWBb5FWByeNg/JBMR8L3+9xaL+WiJacmbS8v9mjCJTAr0/HSFgVlW\nMLpAKQPYNV7FFjQPnbCnEeZIbDMse/oSCqGhOnUL/ErO1VoA0sLBZYWENfTZSdjQ\nBAjP47LdQZGC+VY5+nSFjN2sTi3mFW8mtJfkcD8zzTkOFr5GjUV8kmeOASd/MkH1\n3WkvN19ehxdeqCka6udDUozus5ccBjMKE/bKBWbVYV9xg6som3BkATvD+bYgrrvP\nCK31D1NfWc4fcn5YE12rqqOT6cEVN+ZkgJMgk1/bQQKBgQDrYeh4dJ7DNph9dp6r\nQByXoILMksQZFVgSn3ObOdpoHsK/PR39wOybavX6U6P2tOGN9ysKIPNfES1jEqQw\ntj6qPLopI4EMzX8zNsXDPObSYeCsAMMQlCWuFQaVXFDs6ibUWGW/OOcKgUudByzv\nWSnEGnEumkKasx6ZWkPuSCqjMQKBgQDe8PEkEiBkyyQTUNoA5tMNUBfwHmmrU9PK\nY0A32JQTJPNEIFgezRayqHdhC0izVB5hWU58v+aVPup/XRcJTdbKFbhfsE1Nc/v4\neclSOq98jvAO8GdIS4Px7BbIPYzDpQgQ4d7QQpP3ELHBK7VtXmO0S4Zekg3iiiGA\nJSVBZS/0VQKBgQDEAuli/cKDz8AWoqQo+Z+VyM2DbCiutq57+5p6xieRkyQbutpx\nyKmAFwc1aVdeB2zZGt4VdjEUlqpUGV7vTaRLgXyI6474yVvGmzL+jYWt5mIA+jV2\nZdgm6k1sLc8aKzcgl2hLYChOADOmVSZfPsHgEyDzbPRP/R9bFucA08nl0QKBgAc4\n0Ob1O11ogzuo89bxo0acIJpjsdKd/Y9h1bO5bVqNaN/9GD2vMRwKfwuCvREqGW3X\n4cYCxWpyRlBn6JYhkmKrf3SCFo76wd/TuiTSx9qGGtqxCPd7ksOkfTxxWf0AfJln\nZ7thXL+1J7z1OIRZeWtewvSPUKnVBa7MBT/wEjSdAoGAeN2S1YgLLc3bmLbzlzpP\n0J8Q2RpCj5al43d1IDgXU8JmzzDosw6bCQueW1t3kB3n2tERpILryPWXCH19Tj2c\nJSRLtKQzDkPeZa5J5NRwI07lDYEtxg6zyIYnvLMSHumCDmXdo+weNFW5+nj8fKS9\nj/PqtJkQFXmbklbYs3FFKY8=\n-----END PRIVATE KEY-----\n",
-        "client_email": "firebase-adminsdk-nkzfc@ecommerce-789cf.iam.gserviceaccount.com",
-        "client_id": "102037005359497555193",
+        "project_id": "coderhouseclasses",
+        "private_key_id": "0d132c2eb183bfb11aae219ed621da6aadab750a",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCgZjMQuayAZtMc\n5sTNkI/0a7zDW988ok/w1z/FvlIDVkYAiDtqXpXpHRfQp1hVcEa8SPIhSuLU+1t2\nGNkKZuoij4QGG53SS4P/O0EgpKlWO1jDk2fT/PxUa7IqFHs+IldLHU5FCdO1eD0+\nOdjTLiJU/DoK35HH09FrjP2ZwGswWxZ2dN0d8Vrw11SAlmcw+zunl+euReh52W4l\nvHrgqBM3rV9UXW1FZL13BxTpJBoRKUNZ9HGepDCYFbYwIEjafjKD/DFaU5tqDLZn\nbJBBStplkjhxOCBHf55bepMV1TQcIlcgo27bIw5iy4PI9WSQiv0rVV1slw4o2Hyf\n/0LhjhDTAgMBAAECggEAGR1Xco93/JTdCmHxv7Qabi1uXXJlplNNzAqQADDYG5Cn\nHk82amXL+DencnK5aItPcAzF6MOWd72xqPCkDzZlA6tQAzrQv8w2K0EGZguSPh/F\nur26XJ14julb+K3DTEvJOkgo6LNstDXS9QrOseY/1um1Vt2BsHWwjTQCw0+3GNdy\ntQUwHQr1Z26BYaGFp4fDOtETEs6SXtUunxzp/yZEXLgxU+pFijpeA4SIvbekIKxv\n1bn2WAHqI89DHExPvT4LwBYuZK7tuhQrrz4T+9TMqzEdxZ0H9Am0AUGq/R+o8zdq\naX7JuB8U4JO5m9YI8T5lPtQUak+/qaFblrZo4l1nIQKBgQDZPXofF8ySQ35w2rYB\nX8c8aBi15KIUU8eOhCHxvWzXDCagH8M5DU9Y6Ypf7yE+9GcZSiXRNaU2WFTdITQZ\nS7saWIgZJ43hB80a5TJpT9bNlgJWAkMKkv7kEMVDigdKQpuZIQURDnryWVR/RQxj\nKGdKnH1rhzH3E8UDP0oU8HZUYQKBgQC9BH4GmnSa6djzNj0FZ+OI1QmrQrUGkfq8\nXEX5Fqa1hy67AvdyY3hEQsfBYbvb3YohuaSjVGuVVI/j4lF1rx/f8mzJDi28p2GB\nNB9AwPXnA+62GITObZKmyKbo6rON8h2VsqZ04NTwv7eaNkHTFad4mV0CagMor5ax\nch8HoLqxswKBgFBEZdYNPhog9BwQw8UYNY59S/wRQU3PcuGWstAWVJvUsoThl4mC\nAHpyuB0gRyFyvpFak0SM1MGSu7CE7zIViEmAwrDAq6yk7ETuwMSmqlCGB9DtvwWu\nMJ3mEG0XGAB5QfK/f5bAye630P/BbIVKzXeFANZ1OqH3XQkJHn9EJgShAoGBAJJ4\nhbRWQl+9MKofcJ/cxnxFIe39jkweGR+XnX2NaPgoXjT68odIv2yeFy8qrimNfjnu\nIr+Sbp/UXIBp41f/sgKXWGdgvl5/klZN7p3+KU+wQ24Gh/ty+36U5Ip/PU6UvQpA\n2y6c/0XkOsGco9uP3yvcJC/3uKTxlCPDXHpLugBzAoGAO4dmahn7SRnuWhM32t2K\nS+4QxXOOeaFICPa9kkG+7Yi8XYudBAX4rpzeeOZLezApcY8NqTB6ccOZ55XMHcUP\nwp6RKACRC3f6GVwSYODxsAngbmHPkK7SS74dhhFQBaqicfYFuDktwNGki7zMA+1r\nLeTS4tlfPhj4DNunqGcMH8c=\n-----END PRIVATE KEY-----\n",
+        "client_email": "firebase-adminsdk-1pzvv@coderhouseclasses.iam.gserviceaccount.com",
+        "client_id": "101377053089409356107",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-nkzfc%40ecommerce-789cf.iam.gserviceaccount.com"
-      },
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1pzvv%40coderhouseclasses.iam.gserviceaccount.com"
+    },
     mongodb: {
-        cnxStr: 'mongodb+srv://admin:adminpw@cluster0.vfrm3.mongodb.net/ecommerce?retryWrites=true&w=majority'
+        cnxStr: 'mongodb+srv://admin:adminpw@cluster0.vfrm3.mongodb.net/messages?retryWrites=true&w=majority'
     },
     
 }

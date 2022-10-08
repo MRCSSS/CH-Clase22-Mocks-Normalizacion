@@ -2,15 +2,11 @@
 import ContFirebase from '../../containers/ContFirebase.js';
 
 /* ------------------------ CLASE CONTENEDOR ------------------------ */
-class CartsDaoFirebase extends ContFirebase {
+class MessagesDaoFirebase extends ContFirebase {
     constructor() {
-        super('carts');
-    }
-
-    async save( cart= { products: [] }) {
-        return super.save(cart);
+        super('msgs');
     }
 }
 
 /* ---------------------- MODULOS EXPORTADOS ------------------------ */
-export default CartsDaoFirebase;
+export default MessagesDaoFirebase;
